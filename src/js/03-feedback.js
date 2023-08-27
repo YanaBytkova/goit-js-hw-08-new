@@ -8,7 +8,7 @@ const button = document.querySelector("button");
 // console.log(inputEmail);
 // console.log(inputMsg);
 const oldData = JSON.parse(localStorage.getItem("feedback-form-state"));
-    if (oldData !== null) {
+    if (oldData != null) {
       console.log("old data from Storage:", oldData);
       inputEmail.value = oldData.email;
       inputMsg.value = oldData.message;
