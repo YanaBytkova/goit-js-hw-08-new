@@ -16,20 +16,21 @@ const oldData = JSON.parse(localStorage.getItem("feedback-form-state"));
    
 
 const currentData = function(event) {
-    const {
-        elements: { email, message }
-      } = event.currentTarget;
+  
        const outputData = {
-        email: email.value,
-        message: message.value,
+        email: inputEmail.value,
+        message: inputMsg.value,
     };
           
     console.log(outputData);
-   
+   if (outputData.email !== "" && outputData.message !== "") {
     localStorage.setItem("feedback-form-state", JSON.stringify(outputData));
+   }
+    
     
 };
-ourForm.addEventListener("input", throttle(currentData, 500));
+
+ourForm.addEventListener("input", throttle(currentData,500));
 ourForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
@@ -38,7 +39,7 @@ function handleSubmit(event) {
   const saveEmail = form.elements.email;
   const saveMessage = form.elements.message;
   if (saveEmail === "" || saveMessage === "") {
-    return console.log("Please fill in all the fields!");
+    return alert("Please fill in all the fields!");
   }
 
   console.log(`Email: ${saveEmail.value}, Message: ${saveMessage.value}`);

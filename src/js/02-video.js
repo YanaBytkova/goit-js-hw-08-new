@@ -20,17 +20,6 @@
     player.on('timeupdate', throttle(onPlay, 1000));
  
     const timeOfPause = localStorage.getItem("videoplayer-current-time");
-    player.setCurrentTime(timeOfPause).then(function(seconds) {
-        
-    }).catch(function(error) {
-        switch (error.name) {
-            case 'RangeError':
-                
-                break;
-    
-            default:
-                
-                break;
-        }
-    });
+    player.setCurrentTime(timeOfPause || 0);
+  
    
