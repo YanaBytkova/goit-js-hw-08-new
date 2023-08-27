@@ -12,9 +12,7 @@
     "url": "git+https://github.com/YanaBytkova/goit-js-hw-08-new.git"
   },
   "keywords": [],
- 
   "license": "ISC",
-
   "dependencies": {
     "@vimeo/player": "^2.20.1",
     "lodash.throttle": "^4.1.1",
