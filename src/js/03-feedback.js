@@ -20,7 +20,7 @@ const currentData = function(event) {
         message: inputMsg.value,
     };
           
-    console.log(outputData);
+    
    if (outputData.email !== "" && outputData.message !== "") {
     localStorage.setItem("feedback-form-state", JSON.stringify(outputData));
    }
@@ -45,5 +45,7 @@ function handleSubmit(event) {
   console.log(`Email: ${email.value}, Message: ${message.value}`);
 
   event.currentTarget.reset();
+  localStorage.removeItem("feedback-form-state");
+  console.log("Your storage was cleaning!!!")
 }
 
