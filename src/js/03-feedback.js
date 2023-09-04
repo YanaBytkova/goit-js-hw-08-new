@@ -42,7 +42,7 @@ function handleSubmit(event) {
      return alert("Please fill in all the fields!");
   }
 
-  console.log(JSON.parse(localStorage.getItem("feedback-form-state")));
+  console.log("User data: ",JSON.parse(localStorage.getItem("feedback-form-state")));
 
   event.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
